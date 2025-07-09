@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CB Collection - Elevate Your Style</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- AOS CSS library -->
+<!-- Load AOS CSS library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Load AOS JavaScript library -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+</head>
+<style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+.header {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  background: #bc2f7c;
+  color: #fff;
+}
+
+.logo { 
+ font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+  background-color: #bc2f7c;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 5px;
+  
+  
+}
+.logo span {
+ font-weight: 700;
+  font-size: 36px;
+  margin-right: 5px;
+}
+.logo-container {
+  text-align: center;
+}
+.nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+  
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+@media only screen and (max-width: 280px){
+    .nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+}
+}
+@media only screen and (min-width: 540px){
+    .nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  
+}
+
+.hero img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+
+.hero-text {
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  
+}
+
+.hero .btn {
+  padding: 0.8rem 1.5rem;
+  background: #d6336c;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.featured, .categories, .about, .cta {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.products {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.product1 img {
+  width: 100%;
+  max-width: 200px;
+  height: 70%;
+}
+.product2 img {
+  width: 100%;
+  max-width: 200px;
+  height: 70%;
+}
+.product3 img {
+  width: 100%;
+  max-width: 200px;
+  height: 70%;
+}
+.category-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.category-list div {
+  background: #e6e6e6;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta form {
+  margin-top: 1rem;
+}
+
+.cta input {
+  padding: 0.7rem;
+  width: 85%;
+  border-radius: 3px;
+  border: none;
+  margin-right: 1rem;
+}
+
+.cta button {
+  padding: 0.7rem 0.6rem;
+  background-color: #d6336c;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+}
+.btn1{
+    padding: 0.8rem 1.5rem;
+  background: #d6336c;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.footer {
+  background: #490c1bf0;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer a {
+  color: #f4f4f4;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.about {
+  padding: 30px 0;
+  background-color: #f7f7f7;
+}
+
+.about h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 35px; /* Increased font size */
+  font-weight: bold;
+  padding-top: 30px; /* Added padding top */
+  padding-bottom: 10px; /* Added padding bottom */
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 0; /* Added padding */
+}
+
+.about-image {
+  width: 80%;
+  margin: 20px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+
+
+.user-guide {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-guide h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.user-guide ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-guide li {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.0);
+}
+
+.user-guide span {
+  display: block;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.btn {
+  background-color: #d6336c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+}
+
+
+</style>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+      <div class="logo-container">
+    <div class="logo"><span>CB</span> Collection</div>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li> 
+      </ul>
+    </nav>
+    <br>
+   
+  </header>
+  
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="hero.jpg" alt="Model showcasing product" />
+    <div class="hero-text">
+      <p data-aos="fade-down" data-aos-duration="800" data-aos-delay="600" data-aos-easing="ease-in-out"><big>Elevate Your Style with CB Collection Explore Now!!</big></p>
+      <a href="shop.html" class="btn" data-aos="fade-up" data-aos-delay="500">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Product Showcase -->
+  <section class="featured" data-aos="fade-down" data-aos-delay="600">
+    <h2>Featured Products</h2>
+    <div class="products">
+      <div class="product1">
+        <img src="bag1.jpg" alt="Perfume"/>
+        <h3 data-aos="fade-up">Luxury Bags</h3>
+      </div>
+      <div class="product2">
+        <img src="jew1.jpg" alt="Jewelry"/>
+        <h3 data-aos="fade-up">Elegant Jewelry</h3>
+      </div>
+      <div class="product3">
+        <img src="sni1.jpg" alt="Sneakers"/>
+        <h3 data-aos="fade-up">Trendy Sneakers</h3>
+      </div>
+    </div>
+  </section>
+   
+  <!-- About Us -->
+   <section class="about" id="about">
+  <div class="container">
+    <h1 data-aos="fade-down">About Us</h1>
+    <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-in-out">Welcome to CB Collection, your premier destination for the latest fashion and beauty trends. Our mission is to provide high-quality products that make you feel confident and beautiful.</p>
+    <div class="about-content">
+      <div class="about-image" data-aos="zoom-in">
+        <img src="bags.jpg" alt="About Image">
+      </div>
+      <div class="about-text">
+        <h2 data-aos="fade-right">Our Story</h2>
+        <p data-aos="fade-up">We believe that fashion and beauty are not just about looking good, but also about feeling good. That's why we're committed to providing products that are not only stylish but also safe and sustainable.</p>
+        <h2 data-aos="fade-right">Our Mission</h2>
+        <p data-aos="fade-up">Our mission is to empower individuals to express themselves through fashion and beauty, while promoting a culture of inclusivity, diversity, and sustainability.</p>
+        <h2 data-aos="fade-right">Our Values</h2>
+        <p data-aos="fade-up">We value creativity, innovation, and customer satisfaction. We're committed to providing exceptional customer service and ensuring that every customer has a positive experience with our brand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="user-guide" >
+  <h2 data-aos="fade-up">How to Purchase Goods on Our Website</h2>
+  <ol>
+    <li data-aos="fade-up">
+      <span>Browse through our products and select the ones you'd like to purchase.</span>
+      <button class="btn">Browse Products</button>
+    </li>
+    <li data-aos="fade-up">
+      <span>Click the "Add to Cart" button to add the selected products to your cart.</span>
+      <button class="btn">Add to Cart</button>
+    </li>
+    <li data-aos="fade-up">
+      <span>When you're done selecting products, click the cart icon to proceed.</span>
+      <button class="btn">View Cart</button>
+    </li>
+    <li data-aos="fade-up">
+      <span>You will be redirected to our seller page where you can complete your purchase.</span>
+    </li>
+    <li data-aos="fade-up">
+      <span>Follow the prompts to complete your order and make payment.</span>
+    </li>
+  </ol>
+</div>
+
+      <!-- Call-to-Action -->
+  <section class="cta">
+      <h2 data-aos="fade-right">Don't Miss Out!</h2>
+    <a href="shop.html" class="btn1" data-aos="fade-left">Shop Now</a>
+    </section>
+  <!-- Footer -->
+  <footer class="footer" id="contact" data-aos="fade-up">
+  
+    
+    <section class="cta">
+    <form>
+      <input type="email" placeholder="Your email address" />
+      
+      <button type="submit">Sign Up for Exclusive Offers</button>
+    </form>
+  </section>
+    <div class="contact-info">
+      <a href="mailto:ezeanichiamaka300@gmail.com" class="f">ezeanichiamaka300@gmail.com</a>
+      <br>
+      <a href="tel:+2348066200090" class="f">+2348066200090"</a>
+      <p>Address: Sokoto, Sokoto Nigeria</p>
+    </div>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+    </div>
+      
+    </div>
+  </footer>
+  <!-- AOS CSS library -->
+
+<!-- Initialize AOS -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      offset: 200,
+      delay: 100,
+      duration: 800,
+      easing: 'ease-in-out'
+    });
+  });
+</script>
+<script>
+    const buttons = document.querySelectorAll('.btn');
+
+buttons.forEach(button => {
+  button.addEventListener('mouseover', () => {
+    button.style.transform = 'scale(1.1)';
+  });
+
+  button.addEventListener('mouseout', () => {
+    button.style.transform = 'scale(1)';
+  });
+
+  button.addEventListener('click', () => {
+    alert('You are shopping like a pro Keep it up! 💸');
+  });
+});
+</script>
+</body>
+</html>
