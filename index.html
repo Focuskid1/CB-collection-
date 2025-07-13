@@ -3,24 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CB Collection - Elevate Your Style</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- AOS CSS library -->
-<!-- Load AOS CSS library -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <!-- Load AOS JavaScript library -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-</head>
-<style>
-    body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-  color: #333;
-}
+  <title>Shop Now - CB Collection</title>
 
-.header {
+  <!-- Font Awesome for icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #fff; color: #333; }
+
+   .header {
   display: block;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +22,22 @@
   color: #fff;
 }
 
-.logo { 
+    .cart-icon { 
+    font-size: 34px; cursor: pointer;         
+    position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  color: #FF9900;
+  border-radius: 5px;
+    }
+    .cart-icon .badge {
+      position: absolute; top: -8px; right: -10px;
+      background: #d6336c; color: #fff;
+      border-radius: 50%; padding: 2px 6px; font-size: 12px;
+    }
+
+   .logo { 
  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: 300;
@@ -49,14 +58,17 @@
   text-align: center;
 }
 .nav ul {
+   font-family: "Playfair Display", Georgia, serif; /* Classic font */
+font-weight: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;list-style: none;
+  padding: 20px;
+  list-style: none;
   display: flex;
   gap: 1.5rem;
+  text-shadow: 1px 1px 2px #4e4e4e;
 }
-
   
 
 .nav a {
@@ -79,205 +91,72 @@
 }
 }
 
-.hero {
-  position: relative;
-  text-align: center;
-  
-}
+    .shop-section { max-width: 1500px; margin: 30px auto; padding: 0 15px; }
 
-.hero img {
-  width: 100%;
-  height: 80vh;
-  object-fit: cover;
-}
+    .top-bar { display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; }
 
-.hero-text {
-font-family: 'Montserrat', sans-serif;
-font-weight: 700;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  
-}
+    .top-bar input[type="text"],
+    .filters select {
+      padding: 10px; border: 1px solid #ccc; border-radius: 5px;
+    }
 
-.hero .btn {
-  padding: 0.8rem 1.5rem;
-  background: #d6336c;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
-.featured, .categories, .about, .cta {
-  padding: 3rem 2rem;
-  text-align: center;
-}
+    .product-card {
+      border: 1px solid #eee; padding: 15px; border-radius: 8px;
+      background: #fff; text-align: center; transition: 0.3s ease;
+    }
 
-.products {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 2rem;
-}
+    .product-card img {
+      width: 80%; height: 200px; object-fit: cover; border-radius: 6px;
+    }
 
-.product1 img {
-  width: 100%;
-  max-width: 200px;
-  height: 70%;
-}
-.product2 img {
-  width: 100%;
-  max-width: 200px;
-  height: 70%;
-}
-.product3 img {
-  width: 100%;
-  max-width: 200px;
-  height: 70%;
-}
-.category-list {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
+    .product-card h3 { margin: 10px 0 5px; }
+    .product-card p { color: #d6336c; font-weight: bold; }
 
-.category-list div {
-  background: #e6e6e6;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .product-card button {
+      background: #d6336c; color: white; border: none;
+      padding: 10px 0; width: 60%; border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer; margin-top: 10px;
+    }
 
-.cta form {
-  margin-top: 1rem;
-}
+    .product-card button:hover { background: #ad2453; }
 
-.cta input {
-  padding: 0.7rem;
-  width: 85%;
-  border-radius: 3px;
-  border: none;
-  margin-right: 1rem;
-}
+    .cart {
+      display: none; position: fixed; top: 60px; right: 20px;
+      background: #fff; border: 1px solid #ccc;
+      padding: 15px; border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px;
+      max-height: 450px; overflow-y: auto; z-index: 999;
+    }
 
-.cta button {
-  padding: 0.7rem 0.6rem;
-  background-color: #d6336c;
-  color: #fff;
-  border-radius: 3px;
-  border: none;
-}
-.btn1{
-    padding: 0.8rem 1.5rem;
-  background: #d6336c;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
+    .cart h4 { margin-bottom: 10px; font-size: 18px; display: flex; justify-content: space-between; align-items: center; }
+    .cart ul { list-style: none; }
+    .cart li {
+      display: flex; justify-content: space-between;
+      align-items: center; padding: 6px 0;
+      border-bottom: 1px solid #eee; font-size: 14px;
+    }
 
-.footer {
-  background: #490c1bf0;
-  color: #fff;
-  padding: 2rem;
-  text-align: center;
-}
+    .cart li button { background: none; border: none; color: #d6336c; cursor: pointer; font-size: 14px; }
 
-.footer a {
-  color: #f4f4f4;
-  text-decoration: none;
-  margin: 0 1rem;
-}
+    .cart .buy-btn {
+      display: block; margin-top: 15px;
+      background: #25D366; color: white; border: none;
+      width: 100%; padding: 10px; border-radius: 5px;
+      text-align: center; text-decoration: none;
+      font-size: 16px;
+    }
 
-.about {
-  padding: 30px 0;
-  background-color: #f7f7f7;
-}
-
-.about h1 {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 35px; /* Increased font size */
-  font-weight: bold;
-  padding-top: 30px; /* Added padding top */
-  padding-bottom: 10px; /* Added padding bottom */
-}
-
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px 0; /* Added padding */
-}
-
-.about-image {
-  width: 80%;
-  margin: 20px;
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-
-
-
-.user-guide {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.user-guide h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.user-guide ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.user-guide li {
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.0);
-}
-
-.user-guide span {
-  display: block;
-  margin-bottom: 10px;
-  color: #666;
-}
-
-.btn {
-  background-color: #d6336c;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #3e8e41;
-}
-
-
-</style>
+    footer { background: #f8f8f8; padding: 20px; text-align: center; color: #777; margin-top: 40px; }
+  </style>
+</head>
 <body>
 
   <!-- Header Section -->
@@ -285,151 +164,182 @@ font-weight: 700;
       <div class="logo-container">
     <div class="logo"><span>CB</span> Collection</div>
     </div>
+    
+      
     <nav class="nav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="shop.html">Shop</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li> 
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li> 
       </ul>
     </nav>
+    <i class="fas fa-shopping-cart cart-icon" id="cart-toggle">
+        <span class="badge" id="cart-count">0</span>
+      </i>
     <br>
    
   </header>
-  
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="hero.jpg" alt="Model showcasing product" />
-    <div class="hero-text">
-      <p data-aos="fade-down" data-aos-duration="800" data-aos-delay="600" data-aos-easing="ease-in-out"><big>Elevate Your Style with CB Collection Explore Now!!</big></p>
-      <a href="shop.html" class="btn" data-aos="fade-up" data-aos-delay="500">Shop Now</a>
+  <section class="shop-section" id="shop">
+    <div class="top-bar">
+      <input type="text" id="search" placeholder="Search products..."/>
+      <div class="filters">
+        <select id="category-filter">
+          <option value="all">All Categories</option>
+          <option value="cusmetics">Cusmetics</option>
+          <option value="jewelleries">Jewelleries</option>
+          <option value="shoes">Shoes</option>
+        <option value="snickers">Snickers</option>
+          <option value="bags">Bags</option>
+        </select>
+      </div>
     </div>
+    <div class="product-grid" id="product-grid"></div>
   </section>
 
-  <!-- Product Showcase -->
-  <section class="featured" data-aos="fade-down" data-aos-delay="600">
-    <h2>Featured Products</h2>
-    <div class="products">
-      <div class="product1">
-        <img src="bag1.jpg" alt="Perfume"/>
-        <h3 data-aos="fade-up">Luxury Bags</h3>
-      </div>
-      <div class="product2">
-        <img src="jew1.jpg" alt="Jewelry"/>
-        <h3 data-aos="fade-up">Elegant Jewelry</h3>
-      </div>
-      <div class="product3">
-        <img src="sni1.jpg" alt="Sneakers"/>
-        <h3 data-aos="fade-up">Trendy Sneakers</h3>
-      </div>
-    </div>
-  </section>
-   
-  <!-- About Us -->
-   <section class="about" id="about">
-  <div class="container">
-    <h1 data-aos="fade-down">About Us</h1>
-    <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-in-out">Welcome to CB Collection, your premier destination for the latest fashion and beauty trends. Our mission is to provide high-quality products that make you feel confident and beautiful.</p>
-    <div class="about-content">
-      <div class="about-image" data-aos="zoom-in">
-        <img src="bags.jpg" alt="About Image">
-      </div>
-      <div class="about-text">
-        <h2 data-aos="fade-right">Our Story</h2>
-        <p data-aos="fade-up">We believe that fashion and beauty are not just about looking good, but also about feeling good. That's why we're committed to providing products that are not only stylish but also safe and sustainable.</p>
-        <h2 data-aos="fade-right">Our Mission</h2>
-        <p data-aos="fade-up">Our mission is to empower individuals to express themselves through fashion and beauty, while promoting a culture of inclusivity, diversity, and sustainability.</p>
-        <h2 data-aos="fade-right">Our Values</h2>
-        <p data-aos="fade-up">We value creativity, innovation, and customer satisfaction. We're committed to providing exceptional customer service and ensuring that every customer has a positive experience with our brand.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="cart" id="cart">
+    <h4>Your Cart <i class="fas fa-times" id="cart-close" style="cursor:pointer;"></i></h4>
+    <ul id="cart-items"></ul>
+    <a href="#" class="buy-btn" id="buy-btn" target="_blank">Buy on WhatsApp</a>
+  </div> 
+  <footer>&copy; 2025 CB Collection. All rights reserved.</footer>
+  <!-- AOS and JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 500, once: true });</script>
 
-<div class="user-guide" >
-  <h2 data-aos="fade-up">How to Purchase Goods on Our Website</h2>
-  <ol>
-    <li data-aos="fade-up">
-      <span>Browse through our products and select the ones you'd like to purchase.</span>
-      <button class="btn">Browse Products</button>
-    </li>
-    <li data-aos="fade-up">
-      <span>Click the "Add to Cart" button to add the selected products to your cart.</span>
-      <button class="btn">Add to Cart</button>
-    </li>
-    <li data-aos="fade-up">
-      <span>When you're done selecting products, click the cart icon to proceed.</span>
-      <button class="btn">View Cart</button>
-    </li>
-    <li data-aos="fade-up">
-      <span>You will be redirected to our seller page where you can complete your purchase.</span>
-    </li>
-    <li data-aos="fade-up">
-      <span>Follow the prompts to complete your order and make payment.</span>
-    </li>
-  </ol>
-</div>
+  <script>
+    const products = [  // Shoes
+      { id: 1, name: 'High sole', price: 12.99, category: 'shoes', image: 'sho1.jpg' },
+          { id: 2, name: 'Stripes Snicker', price: 15.25, category: 'snickers', image: 'sni5.jpg' },
+     { id: 3, name: 'Weekend Bag', price: 17.00, category: 'bags', image: 'bag3.jpg' },
+      { id: 4, name: 'Gucci Leather Shoe', price: 7.99, category: 'shoes', image: 'sho4.jpg' },
+       { id: 5, name: 'Fresh Bloom Scent', price: 39.99, category: 'perfume', image: 'pef2.jpg' },
 
-      <!-- Call-to-Action -->
-  <section class="cta">
-      <h2 data-aos="fade-right">Don't Miss Out!</h2>
-    <a href="shop.html" class="btn1" data-aos="fade-left">Shop Now</a>
-    </section>
-  <!-- Footer -->
-  <footer class="footer" id="contact" data-aos="fade-up">
-  
-    
-    <section class="cta">
-    <form>
-      <input type="email" placeholder="Your email address" />
+      // Snickers 
+      { id: 6, name: 'Sluge Snicker', price: 18.50, category: 'snickers', image: 'sni1.jpg' },
+      { id: 7, name: 'Bold Red Lipstick', price: 18.50, category: 'cusmetics', image: 'cus1.jpg' },
+      { id: 8, name: 'High Base', price: 17.00, category: 'snickers', image: 'sni3.jpg' },
+      { id: 9, name: 'Sport Snickers', price: 16.50, category: 'snickers', image: 'sni4.jpg' },
+ { id: 10, name: 'Velvet Shoe', price: 9.99, category: 'shoes', image: 'sho2.jpg' },
+
+      // Perfume
+      { id: 11, name: 'Luxury Perfume', price: 45.00, category: 'perfume', image: 'pef3.jpg' },
+      { id: 12, name: 'High Camp', price: 13.75, category: 'shoes', image: 'sho5.jpg' },
+     { id: 13, name: 'Nova jewellery', price: 67.59, category: 'jewelleries', image: 'jew5.jpg' },
+      { id: 14, name: 'Citrus Splash', price: 35.25, category: 'perfume', image: 'pef4.jpg' },
+      { id: 15, name: 'Romantic Rose', price: 42.90, category: 'perfume', image: 'pef5.jpg' },
+
+      // jewelleries
+      { id: 16, name: 'Round Necklace', price: 42.90, category: 'jewelleries', image: 'jew1.jpg' },
+ { id: 17, name: 'Sarchel Bag', price: 19.99, category: 'bags', image: 'bag2.jpg' },
+     { id: 18, name: 'Glow Lip', price: 0, category: 'cusmetics', image: 'cus3.jpg' },
+      { id: 19, name: 'Luna Earring', price: 42.90,price: 42.90, category: 'jewelleries', image: 'jew4.jpg' },
+{ id: 20, name: 'Night Musk', price: 50.00, category: 'perfume', image: 'pef1.jpg' },
       
-      <button type="submit">Sign Up for Exclusive Offers</button>
-    </form>
-  </section>
-    <div class="contact-info">
-      <a href="mailto:ezeanichiamaka300@gmail.com" class="f">ezeanichiamaka300@gmail.com</a>
-      <br>
-      <a href="tel:+2348066200090" class="f">+2348066200090"</a>
-      <p>Address: Sokoto, Sokoto Nigeria</p>
-    </div>
-    <div class="social-links">
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">Twitter</a>
-    </div>
+      // Bags 
+      { id: 21, name: 'Savvy Bag', price: 18.50, category: 'bags', image: 'bag1.jpg' },
+     { id: 22, name: 'Serum necklace', price: 42.90, category: 'jewelleries', image: 'jew2.jpg' },
+     { id: 23, name: 'Leather Haven', price: 11.50, category: 'shoes', image: 'sho3.jpg' },
+      { id: 24, name: 'Side Boho Bag', price: 16.50, category: 'bags', image: 'bag4.jpg' },
+     { id: 25, name: 'Lightweight Blend', price: 15.25, category: 'cusmetics', image: 'cus5.jpg' },
       
-    </div>
-  </footer>
-  <!-- AOS CSS library -->
+      // Cusmetics
+      { id: 26, name: 'Luner Snickers', price: 19.99, category: 'snickers', image: 'sni2.jpg' },
+      { id: 27, name: 'Hydrating Foundation', price: 19.99, category: 'cusmetics', image: 'cus2.jpg' },
+            { id: 28, name: 'Nova Choker', price: 42.90, category: 'jewelleries', image: 'jew3.jpg' },
+      { id: 29, name: 'Lip Gloss', price: 16.50, category: 'cusmetics', image: 'cus4.jpg' },
+      { id: 25, name: 'City shic', price: 15.25, category: 'bags', image: 'bag5.jpg' }
+       ];
+    const productGrid = document.getElementById('product-grid');
+    const searchInput = document.getElementById('search');
+    const categoryFilter = document.getElementById('category-filter');
+    const cartToggle = document.getElementById('cart-toggle');
+    const cartClose = document.getElementById('cart-close');
+    const cartElem = document.getElementById('cart');
+    const cartItemsElem = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const buyBtn = document.getElementById('buy-btn');
 
-<!-- Initialize AOS -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-      offset: 200,
-      delay: 100,
-      duration: 800,
-      easing: 'ease-in-out'
-    });
-  });
-</script>
-<script>
-    const buttons = document.querySelectorAll('.btn');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-buttons.forEach(button => {
-  button.addEventListener('mouseover', () => {
-    button.style.transform = 'scale(1.1)';
-  });
+    function updateCartCount(){
+      cartCount.textContent = cart.length;
+    }
 
-  button.addEventListener('mouseout', () => {
-    button.style.transform = 'scale(1)';
+    function renderCart(){
+  cartItemsElem.innerHTML = '';
+  cart.forEach((item, idx) => {
+    const li = document.createElement('li');
+    li.innerHTML = ` 
+      ${item.name} 
+      <button onclick="removeFromCart(${idx})"><i class="fas fa-trash"></i></button> 
+    `;
+    cartItemsElem.appendChild(li);
   });
+  updateCartCount();
+  updateWhatsAppLink();
+}
 
-  button.addEventListener('click', () => {
-    alert('You are shopping like a pro Keep it up! 💸');
+function updateWhatsAppLink(){
+  if(cart.length === 0){
+    buyBtn.href = '#';
+    buyBtn.style.pointerEvents = 'none';
+    buyBtn.style.opacity = '0.5';
+  } else {
+    const itemsText = cart.map(i => `${i.name}`).join('%0A');
+    const message = `Hello, I'd like to buy:%0A${itemsText}`;
+    buyBtn.href = `https://wa.me/+2348066200090?text=${message}`;
+    buyBtn.style.pointerEvents = 'auto';
+    buyBtn.style.opacity = '1';
+  }
+}
+
+    function displayProducts(list){
+  productGrid.innerHTML = '';
+  list.forEach((p,i) => {
+    const c = document.createElement('div');
+    c.className = 'product-card';
+    c.setAttribute('data-aos','fade-up');
+    c.setAttribute('data-aos-delay', `${i*50}`);
+    c.innerHTML = ` 
+      <img src="${p.image}" alt="${p.name}"> 
+      <h3>${p.name}</h3> 
+      <button onclick="addToCart(${p.id})">Add to Cart</button> 
+    `;
+    productGrid.appendChild(c);
   });
-});
-</script>
+  AOS.refresh();
+}
+
+    function addToCart(id){
+      const prod = products.find(p=>p.id===id);
+      cart.push(prod);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function removeFromCart(index){
+      cart.splice(index,1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function filterProducts(){
+      const text = searchInput.value.toLowerCase();
+      const cat = categoryFilter.value;
+      const filtered = products.filter(p => p.name.toLowerCase().includes(text) && (cat==='all' || p.category===cat));
+      displayProducts(filtered);
+    }
+
+    searchInput.addEventListener('input', filterProducts);
+    categoryFilter.addEventListener('change', filterProducts);
+    cartToggle.addEventListener('click', ()=>cartElem.style.display = 'block');
+    cartClose.addEventListener('click', ()=>cartElem.style.display = 'none');
+
+    // Initialize
+    displayProducts(products);
+    renderCart();
+  </script>
 </body>
 </html>
